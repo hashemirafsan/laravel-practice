@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Country;
+use App\Address;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -35,5 +36,9 @@ class HomeController extends Controller
 
     public function countries() {
         return Country::all();
+    }
+
+    public function addresses() {
+        return Address::with('country')->where('user_id', Auth::user()->id)->get();
     }
 }

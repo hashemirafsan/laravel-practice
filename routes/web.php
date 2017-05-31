@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'HomeController@user');
 
 Route::get('/countries', 'HomeController@countries');
+
+Route::get('/addresses' , 'HomeController@addresses');
