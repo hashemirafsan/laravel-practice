@@ -72,4 +72,8 @@ class RegisterController extends Controller
             'date_of_birth' => $data['date_of_birth']
         ]);
     }
+
+    protected function update(array $data){
+        return $data;
+    }
 }

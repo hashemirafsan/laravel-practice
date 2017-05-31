@@ -24,3 +24,5 @@ Route::get('/user', 'HomeController@user');
 Route::get('/countries', 'HomeController@countries');
 
 Route::get('/addresses' , 'HomeController@addresses');
+
+Route::post('/user', 'HomeController@userUpdate')->name('update_user');

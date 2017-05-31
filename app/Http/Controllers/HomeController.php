@@ -34,6 +34,15 @@ class HomeController extends Controller
         return Auth::user();
     }
 
+    public function userUpdate(Request $request){
+        User::where('id', Auth::user()->id)
+            ->update([
+                'first_name' => $request->get('first_name'),
+                'last_name' => $request->get('last_name'),
+                'email' => $request->get('email')
+            ]);
+    }
+
     public function countries() {
         return Country::all();
     }
